@@ -1,6 +1,5 @@
 /*---Import fonts---*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -65,32 +64,7 @@ body {
   max-height: 250px;
   overflow-y: auto;
 }
-.elementList li {
-  list-style: none;
-  height: 45px;
-  line-height: 45px;
-  position: relative;
-  background: #f2f2f2;
-  border-radius: 3px;
-  margin-bottom: 8px;
-  padding: 0 15px;
-  cursor: default;
-  overflow: hidden;
-}
-.elementList li span {
-  position: absolute;
-  right: -50px;
-  background: #e74c3c;
-  color: #fff;
-  width: 50px;
-  text-align: center;
-  border-radius: 0 3px 3px 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.elementList li:hover span {
-  right: 0px;
-}
+
 h3 {
   font-size: 28px;
   text-transform: uppercase;
@@ -99,7 +73,7 @@ ol li {
   width: 100%;
   padding: 18px;
   margin: 5px 0;
-  background: #e96969bb;
+  background: #f2f2f2;
   font-size: 18px;
   font-weight: 600;
   counter-increment: my-counter;
@@ -116,9 +90,37 @@ ol li::before {
   color: #fff;
   margin-right: 0.5rem;
 }
+
+.listNum {
+  width: 100%;
+  margin: 5px 0;
+  padding: 20px;
+  background: rgb(250, 93, 93);
+  font-size: 18px;
+}
+
+.listNum h6 {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.listNum button {
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  width: 22%;
+  font-size: 21px;
+}
+
+ol#completed-tasks li {
+  background: #00ff62;
+  list-style: none;
+}
+
 ol li::before {
   content: counter(my-counter);
-  background: rgb(20, 15, 15);
+  background: firebrick;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -127,4 +129,15 @@ ol li::before {
   text-align: center;
   color: #fff;
   margin-right: 0.5rem;
+}
+
+li button {
+  float: right;
+  font-size: 30px;
+  line-height: 28px;
+  margin-right: 15px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }

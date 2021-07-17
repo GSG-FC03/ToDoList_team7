@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -29,56 +29,35 @@
       <div class="section_list">
         <h3>To Do</h3>
         <section class="elementList">
-          <!-- <i class="fas fa-trash"></i>
-					<i class="fas fa-edit"></i> -->
-          <ol id="list">
-            <li>
-              solve my Home work
-              <button>
-                <i class="fas fa-edit"></i>
-              </button>
-              <button>
-                <i class="fas fa-trash"></i>
-              </button>
-            </li>
-            <li>
-              Go shopping
-              <button>
-                <i class="fas fa-edit"></i>
-              </button>
-              <button>
-                <i class="fas fa-trash"></i>
-              </button>
-            </li>
-            <li>
-              Learn new skills
-              <button>
-                <i class="fas fa-edit"></i>
-              </button>
-              <button>
-                <i class="fas fa-trash"></i>
-              </button>
-            </li>
+          <ol class="list">
+          <!----Data comes from the user -->
           </ol>
         </section>
+
+        
+            <!-- this will disapear when the user add task  -->
+        <div class="task-content">
+          <span class="message"> No Task to show </span>
+        </div>
       </div>
+
       <div class="listNum">
         <h6>
-          You have 3 pending task
-          <button>Clear All</button>
+        <span> You have 3 pending task</span>
+          <button >Clear All</button>
         </h6>
       </div>
       <h3>Completed</h3>
-      <ol id="completed-tasks">
+      <ol id="completedtasks">
+
         <li>
-          <label> Solve my Home work </label>
-          <button class="delete">
-            <i class="fas fa-trash"></i>
-          </button>
+
         </li>
       </ol>
     </div>
+    
     <!-- ADDING JAVA SCRIPT -->
-    <script src="./javascript/main.js"></script>
+    <!--sweet alert -->
+     <script src="./javascript/main.js"></script>
   </body>
 </html>

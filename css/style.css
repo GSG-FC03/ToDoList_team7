@@ -59,10 +59,30 @@ body {
   outline: none;
   border-radius: 3px;
   cursor: pointer;
+  transition: transform .5s;
 }
 .addtask button:hover {
   background: greenyellow;
+  transform: rotate(90deg);
 }
+
+.task-content{
+  padding: 15px;
+}
+
+.task-content .message{
+  color: #777;
+  font-size: 15px;
+
+}
+
+.task-content > span{
+  display: block;
+  background-color: #fff;
+  padding: 18px;
+}
+
+
 .main .elementList {
   max-height: 250px;
   overflow-y: auto;
@@ -72,7 +92,7 @@ h3 {
   font-size: 28px;
   text-transform: uppercase;
 }
-ol li {
+ ol li{
   width: 100%;
   padding: 18px;
   margin: 5px 0;
@@ -81,7 +101,8 @@ ol li {
   font-weight: 600;
   counter-increment: my-counter;
 }
-ol li::before {
+/* li::before */
+ ol li::before {
   content: counter(my-counter);
   background: rgb(20, 15, 15);
   width: 2rem;
@@ -121,7 +142,7 @@ ol li::before {
   color:#f2f2f2
 }
 
-ol#completed-tasks li {
+ol#completedtasks li {
   background: #00ff62;
   list-style: none;
 }
@@ -152,7 +173,9 @@ li button {
 
 li button:hover{
 color:red
+
 }
 li button .fa-edit:hover{
   color:rgb(40, 150, 240)
+
   }

@@ -4,7 +4,6 @@ let btnadd = document.querySelector(".addtask > button"); //add btn
 let deleteAllBtn = document.querySelector(".del button");
 let noTaskMsg = document.querySelector(".message");
 const elementList = document.querySelector(".elementList .list");
-// const clearAllBtn =  document.querySelector(".listNum button");
 var btnclearall = document.getElementById("BtnClearAll");
 let pendingCount = document.querySelector(".pendingCount");
 
@@ -61,13 +60,6 @@ btnadd.onclick = function () {
 
     input.value = "";
   }
-
-  // //Delete all the tasks
-  // clearAllBtn.addEventListener("click", function () {
-  //   if (elementList != null) {
-  //     elementList.remove();
-  //   }
-  // });
 }; //end add function
 //deleting Task from local storage
 function deleteTask(index) {

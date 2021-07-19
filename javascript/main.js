@@ -7,6 +7,7 @@ const elementList = document.querySelector(".elementList .list");
 var btnclearall = document.getElementById("BtnClearAll");
 let pendingCount = document.querySelector(".pendingCount");
 
+let taskcompleted =document.querySelector("#completedtasks");
 //Local storage def.
 btnadd.addEventListener("click", function () {
   inputBtnaddVal = input.value;
@@ -18,7 +19,7 @@ btnadd.addEventListener("click", function () {
   }
   taskObj.push(inputBtnaddVal);
   localStorage.setItem("New Todo", JSON.stringify(taskObj));
-  showTasks(); //calling showTasks
+  // showTasks(); //calling showTasks
 });
 
 // //make foucs on Input filed
@@ -39,15 +40,20 @@ btnadd.onclick = function () {
     const newlist = document.createElement("li");
     const deletbtn = document.createElement("button");
     const editbtn = document.createElement("button");
+    const checkbtn = document.createElement("button");
 
     deletbtn.innerHTML = '<i class="fas fa-trash"></i>';
     editbtn.innerHTML = '<i class="fas fa-edit"></i>';
+    checkbtn.innerHTML = '<i class="far fa-check-square"></i>';
+
+
 
     newlist.textContent = input.value;
     input.value = "";
     elementList.appendChild(newlist);
     newlist.appendChild(editbtn);
     newlist.appendChild(deletbtn);
+    newlist.appendChild(checkbtn);
     PendingNum++;
     pendingCount.innerHTML = PendingNum;
 
@@ -60,14 +66,41 @@ btnadd.onclick = function () {
       pendingCount.innerHTML = PendingNum ;
     });
 
+    editbtn.classList.add("editbtn");
+
+    //Edit function >>
+    // editbtn.addEventListener("click", () => this.edit(newlist));
+   
+
     input.value = "";
+        
+    //Check Task function completed 
+      checkbtn.addEventListener("click", function () {
+        const parent = this.parentNode;
+        parent.remove();
+        taskcompleted.appendChild(parent);
+        checkbtn.style.display = "none";
+      });
+
+      deletbtn.addEventListener("click", function () {
+        const parent = this.parentNode;
+        parent.remove();
+      });
+
+    
+    
   }
+      
+
+   
 }; //end add function
+
+
 //deleting Task from local storage
-function deleteTask(index) {
+function deleteTask(parse) {
   let webtask = localStorage.getItem("New Todo");
   taskObj = JSON.parse(webtask);
-  taskObj.splice(index, 1);
+  taskObj.splice(parse, 1);
   localStorage.setItem("New Todo", JSON.stringify(taskObj));
 }
 

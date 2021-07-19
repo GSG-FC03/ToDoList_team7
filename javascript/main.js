@@ -56,6 +56,8 @@ btnadd.onclick = function () {
       const parent = this.parentNode;
       parent.remove();
       deleteTask(parent);
+      PendingNum--;
+      pendingCount.innerHTML = PendingNum ;
     });
 
     input.value = "";

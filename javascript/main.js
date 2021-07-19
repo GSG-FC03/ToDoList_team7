@@ -2,8 +2,11 @@
 let input = document.querySelector("input"); //the place to write
 let btnadd = document.querySelector(".addtask > button"); //add btn
 let deleteAllBtn = document.querySelector(".del button");
-let taskcount = document.querySelector(".listNum span"); //numbers of task
 let noTaskMsg = document.querySelector(".message");
+const elementList = document.querySelector(".elementList .list");
+// const clearAllBtn =  document.querySelector(".listNum button");
+var btnclearall = document.getElementById("BtnClearAll");
+let pendingCount = document.querySelector(".pendingCount");
 
 //Local storage def.
 btnadd.addEventListener("click", function () {
@@ -20,10 +23,11 @@ btnadd.addEventListener("click", function () {
 });
 
 // //make foucs on Input filed
+var PendingNum = 0;
 window.onload = function () {
   input.focus();
+  pendingCount.innerHTML = PendingNum;
 };
-
 // //Adding new task to do list
 
 btnadd.onclick = function () {
@@ -33,7 +37,6 @@ btnadd.onclick = function () {
   } else {
     noTaskMsg.remove();
 
-    const elementList = document.querySelector(".elementList .list");
     const newlist = document.createElement("li");
     const deletbtn = document.createElement("button");
     const editbtn = document.createElement("button");
@@ -46,6 +49,8 @@ btnadd.onclick = function () {
     elementList.appendChild(newlist);
     newlist.appendChild(editbtn);
     newlist.appendChild(deletbtn);
+    PendingNum++;
+    pendingCount.innerHTML = PendingNum;
 
     //Delete Btn
     deletbtn.addEventListener("click", function () {
@@ -56,6 +61,13 @@ btnadd.onclick = function () {
 
     input.value = "";
   }
+
+  // //Delete all the tasks
+  // clearAllBtn.addEventListener("click", function () {
+  //   if (elementList != null) {
+  //     elementList.remove();
+  //   }
+  // });
 }; //end add function
 //deleting Task from local storage
 function deleteTask(index) {
@@ -63,6 +75,19 @@ function deleteTask(index) {
   taskObj = JSON.parse(webtask);
   taskObj.splice(index, 1);
   localStorage.setItem("New Todo", JSON.stringify(taskObj));
+}
+
+//clearAll Function
+function clearAll() {
+  if (elementList != null) {
+    while (elementList.lastElementChild) {
+      elementList.removeChild(elementList.lastElementChild);
+      PendingNum = 0;
+      pendingCount.innerHTML = PendingNum;
+    }
+  } else {
+    alert("No Data To Delete");
+  }
 }
 
 // function showTasks(){

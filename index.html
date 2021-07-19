@@ -30,12 +30,11 @@
         <h3>To Do</h3>
         <section class="elementList">
           <ol class="list">
-          <!----Data comes from the user -->
+            <!----Data comes from the user -->
           </ol>
         </section>
 
-        
-            <!-- this will disapear when the user add task  -->
+        <!-- this will disapear when the user add task  -->
         <div class="task-content">
           <span class="message"> No Task to show </span>
         </div>
@@ -43,21 +42,20 @@
 
       <div class="listNum">
         <h6>
-        <span> You have 3 pending task</span>
-          <button >Clear All</button>
+          <span>
+            You have <span class="pendingCount"></span>&nbsp; pending task</span
+          >
+          <button id="BtnClearAll" onclick="clearAll()">Clear All</button>
         </h6>
       </div>
       <h3>Completed</h3>
       <ol id="completedtasks">
-
-        <li>
-
-        </li>
+        <li></li>
       </ol>
     </div>
-    
+
     <!-- ADDING JAVA SCRIPT -->
     <!--sweet alert -->
-     <script src="./javascript/main.js"></script>
+    <script src="./javascript/main.js"></script>
   </body>
 </html>
